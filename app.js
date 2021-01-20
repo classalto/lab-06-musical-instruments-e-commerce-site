@@ -1,5 +1,8 @@
-// import functions and grab DOM elements
+import { renderProduct } from './renderProduct.js';
+import { violin } from './data.js';
 
-// initialize state
+const ul = document.getElementById('products');
 
-// set event listeners to update state and DOM
+const listItem = renderProduct(violin);
+
+ul.append(listItem); 
