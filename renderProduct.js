@@ -15,7 +15,15 @@ export function renderProduct(item) {
 
     const img = document.createElement('img');
     
-    img.src = '/assets/violin.png';
+    if (item.id === 1) {
+        img.src = '/assets/violin-one.png';
+    } else if (item.id === 2) {
+        img.src = '/assets/violin2.png';
+    } else if (item.id === 3) {
+        img.src = '/assets/violin3.png';
+    } else {
+        img.src = '/assets/violin4.png';
+    }
     img.alt = 'A new violin';
     img.className = 'violin-one';
     li.appendChild(img);

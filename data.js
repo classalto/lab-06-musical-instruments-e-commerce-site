@@ -1,11 +1,47 @@
-export const violin = {
+export const violins = [{
     id: 1,
-    name: 'Violin',
-    image: 'assets/violin.png',
+    name: 'New Violin',
+    image: 'assets/violin-one.png',
     description: 'hand-crafted violin with a deep, glossy varnish.',
     category: 'stringed-instrument',
     price: 100,
     hasBow: true,
     hasStrings: true,
     hasCase: false,
-};
+},
+
+{
+    id: 2,
+    name: 'New Italian Violin',
+    image: 'assets/violin2.png',
+    description: 'hand-crafted rare violin with a lovely light finish.',
+    category: 'stringed-instrument',
+    price: 5000,
+    hasBow: false,
+    hasStrings: true,
+    hasCase: false,
+},
+
+{
+    id: 3,
+    name: 'New French Violin',
+    image: './assets/violin3.png',
+    description: 'hand-crafted violin with a luscious orange finish.',
+    category: 'stringed-instrument',
+    price: 10000,
+    hasBow: false,
+    hasStrings: true,
+    hasCase: false,
+},
+
+{
+    id: 4,
+    name: 'New German Violin',
+    image: './assets/violin4.png',
+    description: 'hand-crafted violin with a yellow varnish with dark accents.',
+    category: 'stringed-instrument',
+    price: 10000,
+    hasBow: false,
+    hasStrings: true,
+    hasCase: false,
+}];
