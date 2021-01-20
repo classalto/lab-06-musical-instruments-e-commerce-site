@@ -1,4 +1,5 @@
 import { renderProduct } from '../renderProduct.js';
+import { findId } from '../cart/findId.js';
 
 const test = QUnit.test;
 
@@ -26,4 +27,80 @@ test('should take in a product and return a li', (expect) => {
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.equal(actual.outerHTML, expected);
+});
+
+// find ID Test
+test('should take arguments (id, array) and return an object with matching id.', (expect) => {
+    
+    //Arrange
+    const violins = [
+        {
+            id: 1,
+            name: 'New Violin',
+            image: 'assets/violin-one.png',
+            description: 'hand-crafted violin with a deep, glossy varnish.',
+            category: 'stringed-instrument',
+            price: 100,
+            hasBow: true,
+            hasStrings: true,
+            hasCase: false,
+        },
+    
+        {
+            id: 2,
+            name: 'New Italian Violin',
+            image: 'assets/violin2.png',
+            description: 'hand-crafted rare violin with a lovely light finish.',
+            category: 'stringed-instrument',
+            price: 5000,
+            hasBow: false,
+            hasStrings: true,
+            hasCase: false,
+        },
+    
+        {
+            id: 3,
+            name: 'New French Violin',
+            image: './assets/violin3.png',
+            description: 'hand-crafted violin with a luscious orange finish.',
+            category: 'stringed-instrument',
+            price: 10000,
+            hasBow: false,
+            hasStrings: true,
+            hasCase: false,
+        },
+    
+        {
+            id: 4,
+            name: 'New German Violin',
+            image: './assets/violin4.png',
+            description: 'hand-crafted violin with a yellow varnish with dark accents.',
+            category: 'stringed-instrument',
+            price: 10000,
+            hasBow: false,
+            hasStrings: true,
+            hasCase: false,
+        }];
+    
+    // Set up your arguments and expectations
+    const expected = {
+        id: 2,
+        name: 'New Italian Violin',
+        image: 'assets/violin2.png',
+        description: 'hand-crafted rare violin with a lovely light finish.',
+        category: 'stringed-instrument',
+        price: 5000,
+        hasBow: false,
+        hasStrings: true,
+        hasCase: false,
+    };
+    
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = findId(2, violins);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.deepEqual(actual, expected);
 });
