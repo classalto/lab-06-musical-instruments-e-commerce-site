@@ -16,7 +16,7 @@ test('should take in a product and return a li', (expect) => {
     };
     //Arrange
     // Set up your arguments and expectations
-    const expected = `<li><h3 class="product-name">Violin</h3><img src="/assets/violin-one.png" alt="A new violin" class="violin-one"><p class="description">hand-crafted violin with a deep, glossy varnish.</p><p class="has-bow">Bow: Included</p><p class="has-strings">Strings: Included</p><p class="has-case">Case: Sold Separately</p><p class="price">$100</p><button class="buy" value="product-id">Buy Now!</button></li>`;
+    const expected = `<li><h3 class="product-name">Violin</h3><img src="assets/violin-one.png" alt="A new violin" class="violin-one"><p class="description">hand-crafted violin with a deep, glossy varnish.</p><p class="has-bow">Bow: Included</p><p class="has-strings">Strings: Included</p><p class="has-case">Case: Sold Separately</p><p class="price">$100</p><button class="buy" value="product-id">Buy Now!</button></li>`;
     
     
     //Act 
