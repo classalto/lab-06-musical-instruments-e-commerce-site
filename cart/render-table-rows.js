@@ -11,7 +11,9 @@ export function renderTableRow(cartItem, instrument) {
     quantityTd.textContent = quantity;
     priceTd.textContent = instrument.price;
 
-    tRow.append(productTd, quantityTd, priceTd);
+    tRow.appendChild(productTd);
+    tRow.appendChild(quantityTd);
+    tRow.appendChild(priceTd);
 
     return tRow;
 }
