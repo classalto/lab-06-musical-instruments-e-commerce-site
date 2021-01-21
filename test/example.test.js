@@ -1,5 +1,6 @@
 import { renderProduct } from '../renderProduct.js';
-import { findId } from '../cart/findId.js';
+import { findId } from '../cart/utils.js';
+import { calcItemTotal } from '../cart/render-table-rows.js';
 
 const test = QUnit.test;
 
@@ -99,6 +100,41 @@ test('should take arguments (id, array) and return an object with matching id.',
     //Act 
     // Call the function you're testing and set the result to a const
     const actual = findId(2, violins);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.deepEqual(actual, expected);
+});
+
+test('should return total price when given a cart object and instrument object', (expect) => {
+    
+    //Arrange
+    const violins = 
+        {
+            id: 1,
+            name: 'New Violin',
+            image: 'assets/violin-one.png',
+            description: 'hand-crafted violin with a deep, glossy varnish.',
+            category: 'stringed-instrument',
+            price: 100,
+            hasBow: true,
+            hasStrings: true,
+            hasCase: false,
+        };
+    const cart = 
+        {
+            id: 1,
+            quantity: 2,
+        };
+    
+    
+    // Set up your arguments and expectations
+    const expected = 200;
+    
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = calcItemTotal(cart, violins);
 
     //Expect
     // Make assertions about what is expected versus the actual result
