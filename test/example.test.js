@@ -1,6 +1,6 @@
 import { renderProduct } from '../renderProduct.js';
 import { findId } from '../cart/utils.js';
-import { calcItemTotal } from '../cart/render-table-rows.js';
+import { calcItemTotal } from '../cart/utils.js';
 import { renderTableRow } from '../cart/render-table-rows.js';
 
 const test = QUnit.test;
