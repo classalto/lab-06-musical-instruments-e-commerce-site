@@ -10,3 +10,8 @@ export function findId(id, array) {
 export function calcItemTotal(cartItem, instrument) {
     return cartItem.quantity * instrument.price;
 }
+// calculate order row
+export function calcOrderTotal(cartItem, productObj) {
+    let accumulator = calcItemTotal(cartItem, productObj);
+    return accumulator;
+}
