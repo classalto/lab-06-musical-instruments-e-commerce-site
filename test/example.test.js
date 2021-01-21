@@ -178,3 +178,40 @@ test('should return total price when given a cart object and instrument object',
     // Make assertions about what is expected versus the actual result
     expect.deepEqual(actual.outerHTML, expected);
 });
+
+// calculate order test
+test('should return total price when given a cart object and instrument object', (expect) => {
+    
+    //Arrange
+    const violins = 
+        {
+            id: 1,
+            name: 'New Violin',
+            image: 'assets/violin-one.png',
+            description: 'hand-crafted violin with a deep, glossy varnish.',
+            category: 'stringed-instrument',
+            price: 100,
+            hasBow: true,
+            hasStrings: true,
+            hasCase: false,
+        };
+    const cart = 
+        {
+            id: 1,
+            quantity: 2,
+        };
+    
+    
+    // Set up your arguments and expectations
+   
+    const expected = `<tr><td>New Violin</td><td>2</td><td>100</td></tr>`;
+    
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = renderTableRow(cart, violins);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.deepEqual(actual.outerHTML, expected);
+});

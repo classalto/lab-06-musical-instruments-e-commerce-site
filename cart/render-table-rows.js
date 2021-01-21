@@ -18,6 +18,4 @@ export function renderTableRow(cartItem, instrument) {
     return tRow;
 }
 
-export function calcItemTotal(cartItem, instrument) {
-    return cartItem.quantity * instrument.price;
-}
+
