@@ -1,6 +1,6 @@
 // import functions and grab DOM elements
 
-import { addToCart } from '../cart/cart-api';
+import { addToCart } from './cart/cart-api.js';
 import { violins } from './data.js';
 
 // initialize state
