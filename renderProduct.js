@@ -1,7 +1,7 @@
 // import functions and grab DOM elements
 
 import { addToCart } from './cart/cart-api.js';
-import { violins } from './data.js';
+
 
 // initialize state
 
@@ -74,7 +74,7 @@ export function renderProduct(item) {
     li.appendChild(button);
 
     button.addEventListener('click', () => {
-        addToCart(violins.id);
+        addToCart(item.id);
     });
 
     return li;

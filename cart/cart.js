@@ -1,11 +1,11 @@
 import { findId, calcOrderTotal } from './utils.js';
 import { renderTableRow, renderOrderRow } from './render-table-rows.js';
 import { violins } from '../data.js';
-import { cart } from './cart-data.js';
+import { getCart } from './cart-api.js';
 
 
 const table = document.querySelector('tbody');
-
+const cart = getCart();
 let total = 0;
 
 

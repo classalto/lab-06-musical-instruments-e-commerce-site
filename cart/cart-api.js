@@ -2,7 +2,7 @@ import { findId } from './utils.js';
 
 // Persistent Data
 const CART = 'CART';
-const emptyCart = [];
+const defaultEmptyCart = [];
 
 
 // get function
@@ -12,8 +12,8 @@ export function getCart() {
     if (stringCart) {
         return JSON.parse(stringCart);
     } else {
-        localStorage.setItem(CART, JSON.stringify(emptyCart));
-        return emptyCart;
+        const stringyEmptyCart = localStorage.setItem(CART, JSON.stringify(defaultEmptyCart));
+        return stringyEmptyCart;
     }
 }
 // set function
@@ -22,7 +22,7 @@ export function setCart(cart) {
 }
 // clear cart
 export function clearCart() {
-    localStorage.setItem(CART, JSON.stringify(emptyCart));
+    localStorage.setItem(CART, JSON.stringify(defaultEmptyCart));
 }
 // add to cart function
 export function addToCart(id) {
