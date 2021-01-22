@@ -1,4 +1,4 @@
-import { findId } from './utils';
+import { findId } from './utils.js';
 
 // Persistent Data
 const CART = 'CART';
