@@ -42,6 +42,7 @@ export function renderOrderRow(total) {
     orderButton.addEventListener('click', () => {
         window.alert(`Are you sure you want to place an order for $${total}`);
         clearCart();
+        window.alert('Your order was successful! Thank you for shopping with us and we look forward to your next purchase!');
         window.location.href = '../index.html';
 
     });
