@@ -1,5 +1,7 @@
 // import functions and grab DOM elements
 
+import { addToCart } from './cart/cart-api.js';
+
 
 // initialize state
 
@@ -68,8 +70,12 @@ export function renderProduct(item) {
     const button = document.createElement('button');
     button.className = 'buy';
     button.value = 'product-id';
-    button.textContent = 'Buy Now!';
+    button.textContent = 'Add To Cart!';
     li.appendChild(button);
+
+    button.addEventListener('click', () => {
+        addToCart(item.id);
+    });
 
     return li;
 }
