@@ -2,6 +2,7 @@ import { renderProduct } from '../renderProduct.js';
 import { calcOrderTotal, findId } from '../cart/utils.js';
 import { calcItemTotal } from '../cart/utils.js';
 import { renderTableRow } from '../cart/render-table-rows.js';
+import { getCart } from '../cart/cart-api.js';
 
 const test = QUnit.test;
 
@@ -19,7 +20,7 @@ test('should take in a product and return a li', (expect) => {
     };
     //Arrange
     // Set up your arguments and expectations
-    const expected = `<li><h3 class="product-name">Violin</h3><img src="assets/violin-one.png" alt="A new violin" class="violin-one"><p class="description">hand-crafted violin with a deep, glossy varnish.</p><p class="has-bow">Bow: Included</p><p class="has-strings">Strings: Included</p><p class="has-case">Case: Sold Separately</p><p class="price">$100</p><button class="buy" value="product-id">Buy Now!</button></li>`;
+    const expected = `<li><h3 class="product-name">Violin</h3><img src="assets/violin-one.png" alt="A new violin" class="violin-one"><p class="description">hand-crafted violin with a deep, glossy varnish.</p><p class="has-bow">Bow: Included</p><p class="has-strings">Strings: Included</p><p class="has-case">Case: Sold Separately</p><p class="price">$100</p><button class="buy" value="product-id">Add To Cart!</button></li>`;
     
     
     //Act 
@@ -216,3 +217,24 @@ test('should return total price when given a cart object and instrument object',
     // Make assertions about what is expected versus the actual result
     expect.deepEqual(actual, expected);
 });
+
+// getCart test
+test('should get cart from localStorage', (expect) => {
+    const testCart = [
+        {
+            id: 9,
+            quantity: 1
+        },
+
+        {
+            id: 8,
+            quantity: 1
+        }
+    ];
+    const stringyCart = JSON.stringify(testCart);
+    const storedCart = localStorage.setItem(stringyCart);
+
+    const cart = getCart(storedCart);
+
+    expect.deepEqual(storedCart, cart);
+})

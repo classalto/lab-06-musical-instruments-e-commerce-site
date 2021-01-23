@@ -1,3 +1,5 @@
+import { clearCart } from './cart-api.js';
+
 export function renderTableRow(cartItem, instrument) {
     const quantity = cartItem.quantity;
 
@@ -26,9 +28,21 @@ export function renderOrderRow(total) {
     const td1 = document.createElement('td');
     const td2 = document.createElement('td');
     const td3 = document.createElement('td');
+    const orderButton = document.createElement('button');
+    const resetButton = document.createElement('button');
 
-    td3.textContent = `Order Total: ${total}.`;
+    td3.textContent = `Order Total: $${total}.`;
+    orderButton.textContent = 'Place Your Order!';
+    resetButton.textContent = 'Clear Cart';
 
     tr.append(td1, td2, td3);
+    td2.append(orderButton);
     tableFoot.append(tr);
+
+    orderButton.addEventListener('click', () => {
+        window.alert(`Are you sure you want to place an order for $${total}`);
+        clearCart();
+        window.location.href = '../index.html';
+
+    });
 }
